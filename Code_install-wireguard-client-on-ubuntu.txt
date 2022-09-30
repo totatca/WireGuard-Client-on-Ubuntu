@@ -2,8 +2,8 @@
 
 	wg genkey | tee privatekey | wg pubkey | tee publickey
 
-	PrivateKey =
-	PublicKey = 
+	PrivateKey_of_Client =
+	PublicKey_of_Client = 
 
 [Interface]
 PrivateKey = PrivateKey_of_the_Client
