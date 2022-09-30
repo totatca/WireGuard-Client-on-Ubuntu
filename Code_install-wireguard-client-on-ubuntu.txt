@@ -1,0 +1,25 @@
+
+
+	wg genkey | tee privatekey | wg pubkey | tee publickey
+
+	PrivateKey =
+	PublicKey = 
+
+[Interface]
+PrivateKey = PrivateKey_of_the_Client
+Address = Range_IP_VPN
+
+[Peer]
+###Public of the WireGuard VPN Server
+PublicKey = PublicKey_of_the_Server
+
+### IP and Port of the WireGuard VPN Server
+Endpoint = IP_of_the_Sever:Port_VPN_of_the_Server
+
+### Allow all traffic
+AllowedIPs = 0.0.0.0/0
+
+
+*** On WireGuard VPN Server
+
+	wg set wg0 peer PublicKey_of_the_Client allowed-ips IP_VPN_of_the_Client
